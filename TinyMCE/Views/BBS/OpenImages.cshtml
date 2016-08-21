@@ -1,0 +1,34 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <script type="text/javascript" src="~/Common/Plugin/tinymce_441/js/tinymce/tinymce.min.js"></script>
+    <script type="text/javascript" src="~/Common/Plugin/tinymce_441/js/tinymce_config.js"></script>
+    <title>AttachImages</title>
+</head>
+<body>
+    <form name="af" action="/BBS/UploadImages" method="post" enctype="multipart/form-data">
+        <div>
+            <input type="file" id="img-upload" name="img" />
+        </div>
+        <input type="submit" value="confirm" onclick="stop()"/>
+    </form>
+
+    <script>
+        function stop() {
+            var location = document.getElementById('img-upload').value;
+            var addr = './Uploads/Images/';
+            var fileName = location.substring(location.length, location.lastIndexOf('\\') + 1);
+            var srcString = "<img src='" + addr + fileName + "'>";
+
+            //alert(location);
+            opener.tinymce.activeEditor.execCommand("mceInsertContent", false, srcString);
+        }
+    </script>
+</body>
+</html>

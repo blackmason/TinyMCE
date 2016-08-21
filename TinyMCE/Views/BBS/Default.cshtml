@@ -12,8 +12,33 @@
     <title>Default</title>
 </head>
 <body>
-    <div>
-        <textarea id="mytextarea">Hello world!!</textarea>
-    </div>
+    <form name="bbsForm" id="bbsForm" action="/BBS/OnSubmit" method="post">
+        <table>
+            <tr>
+                <th>분류</th>
+                <td>
+                    <select name="category">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                    </select>
+                </td>
+            </tr>
+            <tr>
+                <th>제목</th>
+                <td><input type="text" id="subject" name="subject" value="" /></td>
+            </tr>
+            <tr>
+                <th>본문</th>
+                <td><textarea id="contents" name="contents">Hello world!!</textarea></td>
+            </tr>
+            <tr>
+                <th></th>
+                <td></td>
+            </tr>
+        </table>
+        <input type="submit" value="confirm" />
+    </form>
 </body>
 </html>

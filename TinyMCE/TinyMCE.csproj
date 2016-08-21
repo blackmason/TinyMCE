@@ -112,6 +112,8 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Helpers\BaseHelper.cs" />
+    <Compile Include="Models\Helpers\BbsDataAccessHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -840,7 +842,8 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
+    <Folder Include="Models\Domains\" />
+    <Folder Include="Uploads\Images\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />
@@ -932,6 +935,9 @@
     <Content Include="Common\Plugin\tinymce_441\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
     <Content Include="Common\Plugin\tinymce_441\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
     <Content Include="Common\Plugin\tinymce_441\js\tinymce\themes\inlite\src\test\.eslintrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\BBS\OpenImages.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
