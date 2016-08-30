@@ -23,16 +23,19 @@ namespace TinyMCE.Controllers
             return View("OpenImages");
         }
 
-        public void UploadImages(HttpPostedFileBase img)
-        {
+        public void UploadImages(HttpPostedFileBase image)
+         {
             string fileName;
             string filePath;
-            if (img.ContentLength > 0)
+
+            if (image.ContentLength > 0)
             {
-                fileName = Path.GetFileName(img.FileName);
+                fileName = Path.GetFileName(image.FileName);
                 filePath = Path.Combine(Server.MapPath("/Uploads/Images"), fileName);
-                img.SaveAs(filePath);
+                image.SaveAs(filePath);
             }
+
+            //return RedirectToAction("OpenImages");
         }
 
         [ValidateInput(false)]
